@@ -1,0 +1,43 @@
+#logo-container {
+    height: 45px;
+    width: 200px;
+}
+#logo-container img {
+    height: 100%;
+    width: 100%;
+}
+#nav-container #sidebar button {background-color: #ff0000;}
+#nav-container #sidebar ul li {list-style-type: square;}
+#nav-container #sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 5px;
+}
+#nav-container #sidebar ul li a:hover,
+#nav-container #sidebar ul li a:focus {background-color: #3b3b3b;}
+#nav-container-xl {display: none;}
+#nav-container-xl ul {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: auto;
+    list-style-type: none;
+    font-size: 20px;
+    padding: 0;
+}
+#nav-container-xl ul li a {
+    color: white;
+    text-decoration: none;
+}
+#nav-container-xl ul li a:hover,
+#nav-container-xl ul li a:focus {color: black;}
+
+@media only screen and (min-width: 1200px)
+{
+    #nav-container {display: none;}
+    #nav-container-xl {display: block;}
+}
+
+

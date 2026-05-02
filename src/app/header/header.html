@@ -1,0 +1,29 @@
+<header class="container">
+    <div class="d-flex justify-content-evenly align-items-center my-3">
+        <div id="logo-container">
+            <img src="/assets/logo.png"/>
+        </div>
+        <div id="nav-container">
+            <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" 
+            aria-controls="sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div id="sidebar" [ngClass]="sidebar.container" tabindex="-1"> <!-- sidebar (toggles on/off) -->
+                <div [ngClass]="sidebar.header">
+                    <h5 class="offcanvas-title">Browse Movies</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+                </div>
+                <div [ngClass]="sidebar.body">
+                    <ul>
+                        @for (nav of navigation; track nav) {<li><a href="#">{{nav}}</a></li>}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="nav-container-xl">
+            <ul>
+                @for (nav of navigation; track nav) {<li><a href="#">{{nav}}</a></li>}
+            </ul>
+        </div>
+    </div>
+</header>
+
+

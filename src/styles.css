@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+/* general */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* angular */
+app-root section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+app-header, app-footer {
+  display: block;
+  background-color: grey;
+  width: 100%;
+}
+app-main {
+  display: block;
+  flex: 1;
+  width: 100%;
+}
+
+/* bootstrap */
+.container {max-width: 1400px;}
+
+/* xray lines */
+.xray-1 {border: 1px dashed black;}
+.xray-2 {border: 2px dashed black;}
+.xray-3 {border: 3px dashed black;}
+
