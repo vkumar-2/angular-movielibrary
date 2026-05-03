@@ -9,7 +9,8 @@ import { OnInit } from '@angular/core';
 })
 export class Main 
 {
-  api_key = '72919e48c93cb8d0cae0700a046ed917';
+  // hide API key
+  private readonly api_key = '72919e48c93cb8d0cae0700a046ed917';
 
   fetchRated = async() => // top rated
   {
