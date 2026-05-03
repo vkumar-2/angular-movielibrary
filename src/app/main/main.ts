@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { api_key } from './api_key';
 
 @Component({
   selector: 'app-main',
@@ -9,24 +10,23 @@ import { OnInit } from '@angular/core';
 })
 export class Main 
 {
-  // hide API key
-  private readonly api_key = '72919e48c93cb8d0cae0700a046ed917';
+  api = api_key;
 
   fetchRated = async() => // top rated
   {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this.api_key}`) // send HTTP request
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this.api}`) // send HTTP request
     const data = await response.json(); // read response and convert into usable data
     return data; // return final parsed data
   }
   fetchPopular = async() => // most popular
   {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${this.api_key}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${this.api}`);
     const data = await response.json();
     return data;
   }
   fetchUpcoming = async() => // upcoming
   {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${this.api_key}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${this.api}`);
     const data = await response.json();
     return data;
   }
