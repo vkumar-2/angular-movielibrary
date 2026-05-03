@@ -6,6 +6,10 @@
     height: 100%;
     width: 100%;
 }
+#nav-container button {
+    color: white;
+    font-size: 20px;
+}
 #nav-container #sidebar button {background-color: #ff0000;}
 #nav-container #sidebar ul li {list-style-type: square;}
 #nav-container #sidebar ul li a {
@@ -32,7 +36,7 @@
     text-decoration: none;
 }
 #nav-container-xl ul li a:hover,
-#nav-container-xl ul li a:focus {color: black;}
+#nav-container-xl ul li a:focus {color: #7a7a7a;}
 
 @media only screen and (min-width: 1200px)
 {

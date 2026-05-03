@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 export class Header 
 {
   // array of navbar elements
-  navigation = ['Top Rated', 'Most Popular', 'Most Watched'];
+  navigation = ['Upcoming', 'Top Rated', 'Most Popular'];
 
   // Bootstrap classes
   sidebar = 

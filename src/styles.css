@@ -1,10 +1,8 @@
-/* general */
 html, body {
   height: 100%;
   margin: 0;
 }
-
-/* angular */
+/* angular components */
 app-root section {
   display: flex;
   flex-direction: column;
@@ -12,16 +10,16 @@ app-root section {
 }
 app-header, app-footer {
   display: block;
-  background-color: grey;
+  background-color: #2e0d36;
   width: 100%;
 }
 app-main {
   display: block;
   flex: 1;
   width: 100%;
+  background: linear-gradient(22deg, #a7ffec 25%, #ffd359 100%);
 }
-
-/* bootstrap */
+/* extension classes for bootstrap */
 .container {max-width: 1400px;}
 
 /* xray lines */
