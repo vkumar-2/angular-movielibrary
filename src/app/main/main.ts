@@ -10,13 +10,14 @@ import { api_key } from './api_key';
 })
 export class Main 
 {
+  // get API key saved in external file
   api = api_key;
 
   fetchRated = async() => // top rated
   {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this.api}`) // send HTTP request
-    const data = await response.json(); // read response and convert into usable data
-    return data; // return final parsed data
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this.api}`)
+    const data = await response.json(); 
+    return data; 
   }
   fetchPopular = async() => // most popular
   {
