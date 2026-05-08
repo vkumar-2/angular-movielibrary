@@ -19,8 +19,9 @@ app-main {
   width: 100%;
   background: linear-gradient(22deg, #a7ffec 25%, #ffd359 100%);
 }
+
 /* extension classes for bootstrap */
-.container {max-width: 1400px;}
+.container {max-width: 1600px;}
 
 /* xray lines */
 .xray-1 {border: 1px dashed black;}

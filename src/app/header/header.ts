@@ -15,7 +15,7 @@ export class Header
   // Bootstrap classes
   sidebar = 
   {
-    container: ['offcanvas', 'offcanvas-end', 'bg-dark', 'text-light'],
+    container: ['offcanvas', 'offcanvas-end', 'text-light'],
     header: ['offcanvas-header', 'border-bottom'],
     body: ['offcanvas-body'],
   };

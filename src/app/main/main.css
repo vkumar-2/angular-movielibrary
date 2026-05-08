@@ -1,0 +1,78 @@
+
+/* .movie-card {box-shadow: 0 0 15px #2b3557;}
+.card-title {margin-bottom: 1rem;}
+.buttons-container {
+    display: block;
+}
+.reviews-button {display: none;} */
+
+.movie-card {
+    display: block;
+    box-shadow: 0 0 15px #2b3557;
+}
+.movie-card .img-container img {
+    height: 100%;
+    width: 100%;
+}
+.movie-card h2 {
+    text-align: center;
+    padding-top: 1rem;
+}
+.movie-card p {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+}
+.buttons-container {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttons-container button {
+    font-weight: bold;
+    font-size: 15px;
+    margin: auto;
+}
+.buttons-container button a {
+    color: black;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) /* xs */
+{
+}
+@media only screen and (min-width: 600px) /* sm */
+{
+    .movie-card {margin: 0 100px;}
+}
+@media only screen and (min-width: 768px) /* md */
+{
+}
+@media only screen and (min-width: 992px) /* lg */
+{
+    .movie-card {
+        display: flex;
+        margin: 0;
+    }
+    .movie-card h2 {text-align: left;}
+    .movie-card p {text-align: left;}
+    .buttons-container {display: block;}
+    .buttons-container button {
+        margin-left: 0;
+        margin-right: 11px;
+        margin-bottom: 11px;
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 1200px) /* xl */
+{
+}
+@media only screen and (min-width: 1500px) /* xxl */
+{
+}
+
+.gold {color: #ff7b00;}
+.rose {color: #ff0040;}
+.grey {color: #555555;}
+.bold {font-weight: bold;}

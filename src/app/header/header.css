@@ -10,6 +10,9 @@
     color: white;
     font-size: 20px;
 }
+#nav-container #sidebar {
+    background-color: rgb(17, 5, 20);
+}
 #nav-container #sidebar button {background-color: #ff0000;}
 #nav-container #sidebar ul li {list-style-type: square;}
 #nav-container #sidebar ul li a {
@@ -38,10 +41,14 @@
 #nav-container-xl ul li a:hover,
 #nav-container-xl ul li a:focus {color: #7a7a7a;}
 
-@media only screen and (min-width: 1200px)
+@media only screen and (min-width: 992px) /* lg */
 {
     #nav-container {display: none;}
     #nav-container-xl {display: block;}
+}
+
+@media only screen and (min-width: 1200px) /* xl */
+{
 }
 
 

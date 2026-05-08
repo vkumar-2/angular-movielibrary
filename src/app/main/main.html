@@ -1,30 +1,26 @@
 <main class="container">
     <!-- grid -->
-    <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 1</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 2</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 3</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 4</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 5</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 6</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 7</div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="xray-1">Item 8</div>
-        </div>
+    <app-movie-info></app-movie-info>
+    <div class="row g-4 my-4">
+        @if (rated.length > 1) 
+        {
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div class="movie-card">
+                    <div class="col-12 col-lg-5 img-container"><img [src]="getMovieImage(rated[0])" [alt]="rated[0].title"/></div>
+                    <div class="col-12 col-lg-7 px-2 bg-info-subtle">
+                        <h2>{{rated[0].title}}</h2>
+                        <p><i class="fa-solid fa-calendar grey"></i> Release Date: <span class="bold">{{rated[0].release_date.split('-').reverse().join('-')}}</span></p>
+                        <p><i class="fa-solid fa-star gold"></i> Rating: <span class="bold">{{rated[0].vote_average.toFixed(2)}}</span></p>
+                        <p><i class="fa-solid fa-fire rose"></i> Popularity: <span class="bold">{{rated[0].popularity.toFixed(2)}}</span></p>
+                        <div class="buttons-container">
+                            <button type="button" class="btn btn-primary col-9 col-lg-5">Overview</button>
+                            <button type="button" class="btn btn-info col-9 col-lg-5"><a href="https://www.imdb.com/" target="_blank">More Info</a></button>
+                            <button type="button" class="btn btn-warning col-9 col-lg-5"><a href="https://www.imdb.com/" target="_blank">Reviews</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </main>
 
