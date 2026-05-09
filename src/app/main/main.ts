@@ -17,7 +17,7 @@ interface Movie
   id: number;
   title: string;
 
-  // array sub properties
+  // array sub-properties
   original_language: string;
   original_title: string;
   overview: string;
