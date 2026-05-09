@@ -1,26 +1,137 @@
 <main class="container">
     <!-- grid -->
-    <app-movie-info></app-movie-info>
-    <div class="row g-4 my-4">
-        @if (rated.length > 1) 
-        {
-            <div class="col-12 col-lg-6 col-xl-4">
-                <div class="movie-card">
-                    <div class="col-12 col-lg-5 img-container"><img [src]="getMovieImage(rated[0])" [alt]="rated[0].title"/></div>
-                    <div class="col-12 col-lg-7 px-2 bg-info-subtle">
-                        <h2>{{rated[0].title}}</h2>
-                        <p><i class="fa-solid fa-calendar grey"></i> Release Date: <span class="bold">{{rated[0].release_date.split('-').reverse().join('-')}}</span></p>
-                        <p><i class="fa-solid fa-star gold"></i> Rating: <span class="bold">{{rated[0].vote_average.toFixed(2)}}</span></p>
-                        <p><i class="fa-solid fa-fire rose"></i> Popularity: <span class="bold">{{rated[0].popularity.toFixed(2)}}</span></p>
-                        <div class="buttons-container">
-                            <button type="button" class="btn btn-primary col-9 col-lg-5">Overview</button>
-                            <button type="button" class="btn btn-info col-9 col-lg-5"><a href="https://www.imdb.com/" target="_blank">More Info</a></button>
-                            <button type="button" class="btn btn-warning col-9 col-lg-5"><a href="https://www.imdb.com/" target="_blank">Reviews</a></button>
+    <div>
+        <div class="row g-4 my-4">
+            <h1 class="popular-class">Popular Movies</h1>
+            @if (popular.length > 1)
+            {
+                @for (movie of popular; track movie.id)
+                {
+                    <div class="col-12 col-lg-6 col-xxl-4 popular-class">
+                        <div class="movie-card">
+                            <div class="col-12 col-lg-5 img-container">
+                                <img [src]="getMovieImage(movie)" [alt]="movie.title" />
+                            </div>
+                            <div class="col-12 col-lg-7 px-2 bg-info-subtle">
+                                <h4>{{ movie.title }}</h4>
+                                <p>
+                                    <i class="fa-solid fa-calendar grey"></i>
+                                    Release Date:
+                                    <span class="bold">
+                                        {{movie.release_date.split('-').reverse().join('-')}}
+                                    </span>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-star gold"></i>
+                                    Rating:
+                                    <span class="bold">
+                                        {{movie.vote_average.toFixed(2)}}
+                                    </span>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-fire rose"></i>
+                                    Popularity:
+                                    <span class="bold">
+                                        {{movie.popularity.toFixed(2)}}
+                                    </span>
+                                </p>
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-primary col-9 col-lg-5" (click)="openMovieInfo(movie)">Overview</button>
+                                    <a class="btn btn-info col-9 col-lg-5 bold" [href]="`https://www.themoviedb.org/movie/` + movie.id" target="_blank">More Info</a>
+                                    <a class="btn btn-warning col-9 col-lg-5 bold" [href]="`https://www.themoviedb.org/movie/` + movie.id + `/reviews`" target="_blank">Reviews</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        }
-    </div>
+                }
+            }
+            <h1 class="rated-class">Top Rated Movies</h1>
+            @if (rated.length > 1) 
+            {
+                @for (movie of rated; track movie.id)
+                {
+                    <div class="col-12 col-lg-6 col-xxl-4 grid-item rated-class">
+                        <div class="movie-card">
+                            <div class="col-12 col-lg-5 img-container">
+                                <img [src]="getMovieImage(movie)" [alt]="movie.title" />
+                            </div>
+                            <div class="col-12 col-lg-7 px-2 bg-info-subtle">
+                                <h4>{{movie.title}}</h4>
+                                <p>
+                                    <i class="fa-solid fa-calendar grey"></i>
+                                    Release Date:
+                                    <span class="bold">
+                                        {{movie.release_date.split('-').reverse().join('-')}}
+                                    </span>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-star gold"></i>
+                                    Rating:
+                                    <span class="bold">
+                                        {{movie.vote_average.toFixed(2)}}
+                                    </span>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-fire rose"></i>
+                                    Popularity:
+                                    <span class="bold">
+                                        {{ movie.popularity.toFixed(2) }}
+                                    </span>
+                                </p>
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-primary col-9 col-lg-5" (click)="openMovieInfo(movie)">Overview</button>
+                                    <a class="btn btn-info col-9 col-lg-5 bold" [href]="`https://www.themoviedb.org/movie/` + movie.id" target="_blank">More Info</a>
+                                    <a class="btn btn-warning col-9 col-lg-5 bold" [href]="`https://www.themoviedb.org/movie/` + movie.id + `/reviews`" target="_blank">Reviews</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            <h1 class="upcoming-class">Upcoming Movies</h1>
+            @if (upcoming.length > 1) 
+            {
+                @for (movie of upcoming; track movie.id)
+                {
+                    <div class="col-12 col-lg-6 col-xxl-4 grid-item upcoming-class">
+                        <div class="movie-card">
+                            <div class="col-12 col-lg-5 img-container">
+                                <img [src]="getMovieImage(movie)" [alt]="movie.title" />
+                            </div>
+                            <div class="col-12 col-lg-7 px-2 bg-info-subtle">
+                                <h4>{{ movie.title }}</h4>
+                                <p>
+                                    <i class="fa-solid fa-calendar grey"></i>
+                                    Release Date:
+                                    <span class="bold">
+                                        {{movie.release_date.split('-').reverse().join('-')}}
+                                    </span>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-star gold"></i>
+                                    Rating:
+                                    <span class="bold">
+                                        {{movie.vote_average.toFixed(2)}}
+                                    </span>
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-fire rose"></i>
+                                    Popularity:
+                                    <span class="bold">
+                                        {{movie.popularity.toFixed(2)}}
+                                    </span>
+                                </p>
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-primary col-9 col-lg-5" (click)="openMovieInfo(movie)">Overview</button>
+                                    <a class="btn btn-info col-9 col-lg-5 bold" [href]="`https://www.themoviedb.org/movie/` + movie.id" target="_blank">More Info</a>
+                                    <a class="btn btn-warning col-9 col-lg-5 bold" [href]="`https://www.themoviedb.org/movie/` + movie.id + `/reviews`" target="_blank">Reviews</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+  </div>
+  <app-movie-info *ngIf="isMovieInfoOpen" [movie]="movie" (close)="closeMovieInfo()"></app-movie-info>
 </main>
-

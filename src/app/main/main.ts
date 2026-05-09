@@ -45,6 +45,21 @@ interface MovieResponse
 })
 export class Main implements OnInit, OnDestroy
 {
+  isMovieInfoOpen = false;
+  movie: any;
+  
+  openMovieInfo(movie: any) 
+  {
+    this.movie = movie;
+    this.isMovieInfoOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+  closeMovieInfo() 
+  {
+    this.isMovieInfoOpen = false;
+    document.body.style.overflow = 'auto';
+  }
+
   constructor
   (
     private cdr: ChangeDetectorRef,
@@ -121,11 +136,48 @@ export class Main implements OnInit, OnDestroy
     this.upcoming = upcoming.results;
 
     this.cdr.detectChanges();
-
-    console.log(this.rated[0]);
   }
   ngOnDestroy(): void 
   {
     this.breakpointSubscription?.unsubscribe();
+  }
+
+  // hide all categories
+  hideAllCategories(): void 
+  {
+    document.querySelectorAll('.popular-class, .rated-class, .upcoming-class').forEach((element) => 
+    {
+      (element as HTMLElement).style.display = 'none';
+    });
+  }
+
+  // render popular movies
+  displayPopular(): void 
+  {
+    this.hideAllCategories();
+    document.querySelectorAll('.popular-class').forEach((element) => 
+    {
+      (element as HTMLElement).style.display = 'block';
+    });
+  }
+
+  // render rated movies
+  displayRated(): void 
+  {
+    this.hideAllCategories();
+    document.querySelectorAll('.rated-class').forEach((element) => 
+    {
+      (element as HTMLElement).style.display = 'block';
+    });
+  }
+
+  // render upcoming movies
+  displayUpcoming(): void 
+  {
+    this.hideAllCategories();
+    document.querySelectorAll('.upcoming-class').forEach((element) => 
+    {
+      (element as HTMLElement).style.display = 'block';
+    });
   }
 }

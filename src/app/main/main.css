@@ -1,20 +1,64 @@
-
-/* .movie-card {box-shadow: 0 0 15px #2b3557;}
-.card-title {margin-bottom: 1rem;}
-.buttons-container {
-    display: block;
+h1 {
+    text-align: center;
+    margin: auto;
+    margin-top: 0;
+    width: 90%;
+    padding: 0.75rem 1rem;
+    font-size: clamp(2rem, 2vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px #286168,
+        0 0 15px #00e5ff,
+        0 0 30px #7b2cff;
+    background: linear-gradient(90deg, #85005d, #4b006e, #612b1b);
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.35),
+        0 0 30px rgba(123, 44, 255, 0.25);
+    position: relative;
+    overflow: hidden;
 }
-.reviews-button {display: none;} */
-
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    animation: title-shine 3s infinite;
+}
+@keyframes title-shine {
+    0% {left: -100%;}
+    60% {left: 120%;}
+    100% {left: 120%;}
+}
 .movie-card {
     display: block;
     box-shadow: 0 0 15px #2b3557;
+    height: 100%;
+}
+.movie-card .img-container {
+    height: 450px;
 }
 .movie-card .img-container img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
-.movie-card h2 {
+.movie-card > .bg-info-subtle {
+    display: flex;
+    flex-direction: column;
+}
+.movie-card h4 {
     text-align: center;
     padding-top: 1rem;
 }
@@ -24,19 +68,20 @@
     margin: 0;
 }
 .buttons-container {
+    margin-top: auto;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.buttons-container button {
+.buttons-container .btn {
     font-weight: bold;
     font-size: 15px;
     margin: auto;
-}
-.buttons-container button a {
-    color: black;
     text-decoration: none;
+}
+.buttons-container a.btn {
+    color: black;
 }
 
 @media only screen and (max-width: 600px) /* xs */
@@ -44,21 +89,37 @@
 }
 @media only screen and (min-width: 600px) /* sm */
 {
-    .movie-card {margin: 0 100px;}
+    h1 {width: 80%;}
+    .movie-card {margin: 0 100px;} 
 }
 @media only screen and (min-width: 768px) /* md */
 {
 }
 @media only screen and (min-width: 992px) /* lg */
 {
+    h1 {width: 95%;}
     .movie-card {
         display: flex;
+        height: 100%;
         margin: 0;
     }
-    .movie-card h2 {text-align: left;}
+    .movie-card h4 {text-align: left;}
     .movie-card p {text-align: left;}
-    .buttons-container {display: block;}
-    .buttons-container button {
+    .movie-card .img-container {height: auto;}
+    .movie-card .img-container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .movie-card > .bg-info-subtle {
+        display: flex;
+        flex-direction: column;
+    }
+    .buttons-container {
+        display: block;
+        margin-top: auto;
+    }
+    .buttons-container .btn {
         margin-left: 0;
         margin-right: 11px;
         margin-bottom: 11px;
@@ -67,11 +128,18 @@
 }
 @media only screen and (min-width: 1200px) /* xl */
 {
+    h1 {width: 100%;}
 }
 @media only screen and (min-width: 1500px) /* xxl */
 {
 }
 
+/* category (to be appended with TS) */
+.popular-class {display: block;}
+.rated-class {display: none;}
+.upcoming-class {display: none;} 
+
+/* misc classes */
 .gold {color: #ff7b00;}
 .rose {color: #ff0040;}
 .grey {color: #555555;}

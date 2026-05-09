@@ -1,3 +1,37 @@
-<div>
-    Text
+<div class="movie-info-backdrop" (click)="closeMovieInfo()">
+  <div class="movie-info-modal card border-0 shadow-lg" (click)="$event.stopPropagation()">
+    <div class="movie-info-header">
+      <div>
+        <p class="text-uppercase small fw-semibold mb-1 movie-info-subtitle">Movie Overview</p>
+        <h2 class="movie-info-title mb-2">
+          {{ movie.title }}
+        </h2>
+      </div>
+      <span class="badge rounded-pill bg-warning text-dark fs-6 px-3 py-2">
+        <i class="fa-regular fa-star"></i> {{movie.vote_average}}
+      </span>
+    </div>
+    <div class="movie-info-body">
+      <p class="movie-description mb-4">
+        {{ movie.overview }}
+      </p>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <div class="info-chip h-100">
+            <span class="info-label">Release Date</span>
+            <strong>{{movie.release_date.split('-').reverse().join('-')}}</strong>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="info-chip h-100">
+            <span class="info-label">Popularity</span>
+            <strong>{{movie.popularity}}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="movie-info-footer">
+      <button type="button" class="btn btn-danger px-4 py-2 rounded-pill fw-semibold" (click)="closeMovieInfo()">Close</button>
+    </div>
+  </div>
 </div>
