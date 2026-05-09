@@ -11,7 +11,7 @@
     font-size: 20px;
 }
 #nav-container #sidebar {
-    background-color: rgb(17, 5, 20);
+    background-color: rgba(17, 5, 20, 0.9);
 }
 #nav-container #sidebar button {background-color: #ff0000;}
 #nav-container #sidebar ul li {list-style-type: square;}
