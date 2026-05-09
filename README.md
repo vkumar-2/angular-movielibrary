@@ -34,7 +34,7 @@ TypeScript-based framework used to provide the overall structure and architectur
 ### Bootstrap
 CSS library used to build the app’s responsive layout. Bootstrap components such as buttons, cards, and grids help improve the app’s UI/UX and maintain visual consistency across different screen sizes.
 
-#### TMDB API
+### TMDB API
 The Movie Database API: Used to fetch current movie data including titles, posters, ratings, release dates and descriptions. Movie data is then rendered dynamically in the app.
 
 ## Image Gallery
