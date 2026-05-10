@@ -2,6 +2,14 @@
 
 MovieLibrary is a frontend app that uses <a href="https://www.themoviedb.org" target="_blank">TMDB API</a> to fetch and display movie data. Users can browse movies, view movie details such as posters, ratings, release dates and descriptions through a clean, modern UI. The app currently makes use of the following API movie categories: Rated, popular and upcoming.
 
+## Features
+- **Browse Movies** - view a collection of up-to-date movies, fetched from TMDB API and rendered dynamically.
+- **Movie Cards** - movies are displayed as a grid item on clean, responsive cards. Each card presents key movie details in an easy-to-scan layout.
+- **Movie Details** - users can view more detailed information about each showcased movie, such as the full description and anchors that redirect users to the movie's TMDB page with reviews.
+- **Responsive Design** - Bootstrap is used to create a responsive page layout, compatible across different screen sizes.
+- **Angular Routing** - supports navigation between different views, ensuring the app is organised into separate sections while keeping the UX smooth.
+- **Angular Data Rendering** - movie data is displayed dynamically through Angular components and services, keeping the UI flexible and allowing content to update based on API responses.
+
 ## Setup Instructions
 Make sure you have **Node.js** already installed for dependency management.
 
